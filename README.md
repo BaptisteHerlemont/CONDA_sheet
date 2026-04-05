@@ -1,18 +1,9 @@
 # Conda & Mamba Cheat Sheet
 
-A concise reference for creating and managing environments with **Conda** and **Mamba**.
-
-## Quick Take
-
-- **Conda** is the standard tool that ships with Anaconda/Miniconda; it is reliable and always available.
-- **Mamba** is a drop-in replacement for `conda` that is **much faster** at solving environments and downloading packages.
-- Use **Mamba** when you care about speed; use **Conda** when you want the default, most widely documented behavior.
-
-If you have `mamba` installed, you can usually replace:
 
 - `conda` → `mamba`
 
-## Install Mamba (Recommended)
+## Install Mamba 
 
 ```bash
 conda install -n base -c conda-forge mamba
@@ -26,11 +17,9 @@ conda install -n base -c conda-forge mamba
 # With Conda
 conda create -n myenv
 
-# With Mamba (same command, faster)
+# With Mamba (faster)
 mamba create -n myenv
 ```
-
-You are **not required** to specify Python when creating an environment. If you omit it, the environment starts empty and you can add packages (including Python) later.
 
 ### Activate / Deactivate
 
@@ -82,12 +71,10 @@ conda search scikit-learn
 
 Channels are package repositories that Conda searches when installing or updating packages. You can install from a specific channel with `-c`.
 
-Popular channels:
-
 - `defaults` (the official Anaconda channel, used by default)
-- `conda-forge` (community-maintained, very broad coverage)
+- `conda-forge` (community-maintained)
 
-### Use conda-forge (popular and up-to-date)
+### Use conda-forge 
 
 ```bash
 conda install -c conda-forge black
@@ -117,7 +104,6 @@ mamba create ...
 mamba update ...
 ```
 
-Mamba uses a faster solver and parallel downloads, so it is often **significantly quicker** than Conda on large environments.
 
 ## Troubleshooting
 
@@ -134,7 +120,3 @@ conda create -n myenv
 conda clean --all
 ```
 
-## Notes
-
-- Prefer `mamba` for speed; use `conda` if you want the default tool everywhere.
-- The commands are intentionally identical between `conda` and `mamba`.
